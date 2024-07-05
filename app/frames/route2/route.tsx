@@ -11,8 +11,8 @@ export const POST = frames(async (cntxt) => {
   return {
     image: (
       <div tw="flex">
-        <span>The count is {state.count}.</span>
-        <span>{message}</span>
+        <p>The count is {state.count}.</p>
+        <p>{message}</p>
       </div>
     ),
     buttons: [
