@@ -4,15 +4,13 @@ import { Button } from "frames.js/next";
 
 export const POST = frames(async (cntxt) => {
   let state = cntxt.state;
-  let message = cntxt.message?.inputText
-    ? `, Typed: ${cntxt.message?.inputText}`
-    : "";
+  let message = cntxt.message?.inputText ? `${cntxt.message?.inputText}` : "";
 
   return {
     image: (
       <div tw="flex">
-        <p>The count is {state.count}.</p>
-        <p>{message}</p>
+        <div>The count is {state.count}.</div>
+        <div>{message}</div>
       </div>
     ),
     buttons: [

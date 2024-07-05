@@ -13,13 +13,13 @@ export const POST = frames(async (ctx) => {
   return {
     image: (
       <div tw="flex">
-        <p>
+        <div>
           {foo} {ctx.message?.requesterUserData?.username}
-        </p>
-        <p>{ctx.message?.requesterUserData?.username}</p>
-        <p>
+        </div>
+        <div>{ctx.message?.requesterUserData?.username}</div>
+        <div>
           {ctx.message?.requesterFid} - {ctx.message?.connectedAddress}
-        </p>
+        </div>
       </div>
     ), // foo: bar
     buttons: [
