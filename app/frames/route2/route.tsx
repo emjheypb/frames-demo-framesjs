@@ -16,10 +16,10 @@ export const POST = frames(async (cntxt) => {
     ),
     buttons: [
       <Button action="post" target="/route1">
-        Go to route 1
+        ROUTE 1
       </Button>,
       <Button action="post" target="/">
-        Go back
+        HOME
       </Button>,
     ],
   };

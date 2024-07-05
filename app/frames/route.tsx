@@ -21,16 +21,16 @@ const frameHandler = frames(async (ctx) => {
         action="post"
         target={{ query: { foo: "Hello" }, pathname: "/route1" }}
       >
-        Go to route 1
+        ROUTE 1
       </Button>,
       <Button action="post" target="/route2">
-        Go to route 2
+        ROUTE 2
       </Button>,
       <Button action="post" target={{ query: { action: "increment" } }}>
-        Increment
+        ++
       </Button>,
       <Button action="post" target={{ query: { action: "decrement" } }}>
-        Decrement
+        --
       </Button>,
     ],
     state,

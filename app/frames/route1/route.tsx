@@ -18,10 +18,10 @@ export const POST = frames(async (ctx) => {
     ), // foo: bar
     buttons: [
       <Button action="post" target="/route2">
-        Go to route 2
+        ROUTE 2
       </Button>,
       <Button action="post" target="/">
-        Go back
+        HOME
       </Button>,
     ],
   };
