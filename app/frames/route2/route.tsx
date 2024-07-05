@@ -3,6 +3,11 @@ import { frames } from "../frames";
 import { Button } from "frames.js/next";
 
 export const POST = frames(async (cntxt) => {
+  // The added context from the middleware will be available on `ctx` here
+  if (!cntxt.message?.isValid) {
+    throw new Error("Invalid message");
+  }
+
   let state = cntxt.state;
   let message = cntxt.message?.inputText ? `${cntxt.message?.inputText}` : "";
 
@@ -20,11 +25,5 @@ export const POST = frames(async (cntxt) => {
         HOME
       </Button>,
     ],
-    imageOptions: {
-      // Tell the client how long to cache the image for using the Cache-Control header
-      headers: {
-        "Cache-Control": "public, max-age=0",
-      },
-    },
   };
 });

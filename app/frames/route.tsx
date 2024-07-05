@@ -3,6 +3,11 @@ import { frames } from "./frames";
 import { Button } from "frames.js/next";
 
 const frameHandler = frames(async (ctx) => {
+  // The added context from the middleware will be available on `ctx` here
+  if (!ctx.message?.isValid) {
+    throw new Error("Invalid message");
+  }
+
   let state = ctx.state;
 
   switch (ctx.searchParams.action) {
@@ -35,12 +40,6 @@ const frameHandler = frames(async (ctx) => {
     ],
     state,
     textInput: "TEXT FOR ROUTE 2",
-    imageOptions: {
-      // Tell the client how long to cache the image for using the Cache-Control header
-      headers: {
-        "Cache-Control": "public, max-age=0",
-      },
-    },
   };
 });
 
