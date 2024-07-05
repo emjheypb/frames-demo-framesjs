@@ -17,7 +17,10 @@ const frameHandler = frames(async (ctx) => {
   return {
     image: <div tw="flex">Count: {state.count}</div>,
     buttons: [
-      <Button action="post" target="/route1">
+      <Button
+        action="post"
+        target={{ query: { foo: "wazzaaaaap?!" }, pathname: "/route1" }}
+      >
         Go to route 1
       </Button>,
       <Button action="post" target="/route2">
