@@ -30,5 +30,11 @@ export const POST = frames(async (ctx) => {
         HOME
       </Button>,
     ],
+    imageOptions: {
+      // Tell the client how long to cache the image for using the Cache-Control header
+      headers: {
+        "Cache-Control": "public, max-age=0",
+      },
+    },
   };
 });
