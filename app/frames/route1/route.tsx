@@ -4,7 +4,7 @@ import { Button } from "frames.js/next";
 
 export const POST = frames(async (ctx) => {
   // The added context from the middleware will be available on `ctx` here
-  if (ctx.message!.isValid) {
+  if (!ctx.message?.isValid) {
     throw new Error("Invalid message");
   }
 
@@ -13,7 +13,7 @@ export const POST = frames(async (ctx) => {
   return {
     image: (
       <div tw="flex">
-        Route 1. {foo} {ctx.message!.requesterUserData!.username}
+        Route 1. {foo} {ctx.message?.requesterUserData?.username}
       </div>
     ), // foo: bar
     buttons: [
