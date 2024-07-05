@@ -2,9 +2,11 @@
 import { frames } from "../frames";
 import { Button } from "frames.js/next";
 
-export const POST = frames(async () => {
+export const POST = frames(async (cntxt) => {
+  let state = cntxt.state;
+
   return {
-    image: <div tw="flex">Route 2</div>,
+    image: <div tw="flex">Route 2 count is {state.count}</div>,
     buttons: [
       <Button action="post" target="/route1">
         Go to route 1
