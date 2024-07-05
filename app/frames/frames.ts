@@ -1,3 +1,4 @@
+import { farcasterHubContext } from "frames.js/middleware";
 import { createFrames } from "frames.js/next";
 
 export type State = {
@@ -9,4 +10,5 @@ export const frames = createFrames({
   initialState: {
     count: 0,
   },
+  middleware: [farcasterHubContext()],
 });

@@ -19,7 +19,7 @@ const frameHandler = frames(async (ctx) => {
     buttons: [
       <Button
         action="post"
-        target={{ query: { foo: "wazzaaaaap?!" }, pathname: "/route1" }}
+        target={{ query: { foo: "Hello" }, pathname: "/route1" }}
       >
         Go to route 1
       </Button>,
@@ -34,7 +34,7 @@ const frameHandler = frames(async (ctx) => {
       </Button>,
     ],
     state,
-    textInput: "TEXT HERE",
+    textInput: "TEXT FOR ROUTE 2",
   };
 });
 
