@@ -9,8 +9,7 @@ export const POST = frames(async (cntxt) => {
   return {
     image: (
       <div tw="flex">
-        <div>The count is {state.count}.</div>
-        <div>{message}</div>
+        The count is {state.count}. The word is: {message || "NOTHING"}
       </div>
     ),
     buttons: [
