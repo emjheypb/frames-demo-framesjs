@@ -1,0 +1,32 @@
+/* eslint-disable react/jsx-key */
+import { Button } from "frames.js/next";
+import { frames } from "./frames";
+
+const handleRequest = frames(async (ctx) => {
+  return {
+    image: (
+      <span>
+        {ctx.pressedButton
+          ? `I clicked ${ctx.searchParams.value}`
+          : `Yes or No?`}
+      </span>
+    ),
+    buttons: [
+      <Button
+        action="post"
+        target={{ query: { value: "Yes" }, pathname: "/frames" }}
+      >
+        Say Yes
+      </Button>,
+      <Button
+        action="post"
+        target={{ query: { value: "No" }, pathname: "/frames" }}
+      >
+        Say No
+      </Button>,
+    ],
+  };
+});
+
+export const GET = handleRequest;
+export const POST = handleRequest;
