@@ -34,6 +34,7 @@ const frameHandler = frames(async (ctx) => {
       </Button>,
     ],
     state,
+    textInput: "TEXT HERE",
   };
 });
 
