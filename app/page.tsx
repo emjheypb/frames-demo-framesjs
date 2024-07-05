@@ -2,10 +2,7 @@ import { fetchMetadata } from "frames.js/next";
 
 export async function generateMetadata() {
   return {
-    title: "Frames Demo",
-    openGraph: {
-      title: "Frames Demo",
-    },
+    title: "My Page",
     // provide a full URL to your /frames endpoint
     other: await fetchMetadata(
       new URL(
