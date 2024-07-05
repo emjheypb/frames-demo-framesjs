@@ -11,7 +11,8 @@ export const POST = frames(async (cntxt) => {
   return {
     image: (
       <div tw="flex">
-        Route 2 count is {state.count} {message}
+        <span>The count is {state.count}.</span>
+        <span>{message}</span>
       </div>
     ),
     buttons: [

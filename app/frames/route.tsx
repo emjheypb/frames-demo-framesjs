@@ -15,7 +15,7 @@ const frameHandler = frames(async (ctx) => {
   }
 
   return {
-    image: <div tw="flex">Count: {state.count}</div>,
+    image: <div tw="flex">The count is {state.count}.</div>,
     buttons: [
       <Button
         action="post"
@@ -27,10 +27,10 @@ const frameHandler = frames(async (ctx) => {
         ROUTE 2
       </Button>,
       <Button action="post" target={{ query: { action: "increment" } }}>
-        ++
+        +
       </Button>,
       <Button action="post" target={{ query: { action: "decrement" } }}>
-        --
+        -
       </Button>,
     ],
     state,
