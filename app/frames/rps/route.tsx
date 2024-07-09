@@ -28,18 +28,7 @@ export const POST = frames(async (ctx) => {
   }
 
   return {
-    image: (
-      <div className="flex gap-2">
-        {choice && (
-          <div className="flex">
-            {choice === "r" ? "🪨" : choice === "p" ? "📄" : "✂️"} vs{" "}
-            {cpuChoice === 0 ? "🪨" : cpuChoice === 1 ? "📄" : "✂️"}
-          </div>
-        )}
-        <div>You: {state.pScore}</div>
-        <div>CPU: {state.cScore}</div>
-      </div>
-    ),
+    image: `https://${process.env.NEXT_PUBLIC_SITE_URL}`,
     imageOptions: { aspectRatio: "1:1" },
     buttons: [
       <Button action="post" target="/">
