@@ -45,9 +45,6 @@ export const POST = frames(async (ctx) => {
       <Button action="post" target="/">
         HOME
       </Button>,
-      <Button action="post" target="/">
-        RESET
-      </Button>,
       <Button
         action="post"
         target={{ query: { choice: "r" }, pathname: "/rps" }}>
