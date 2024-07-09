@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-key */
+import Home from "@/app/page";
 import { frames } from "../frames";
 import { Button } from "frames.js/next";
 
@@ -28,18 +29,7 @@ export const POST = frames(async (ctx) => {
   }
 
   return {
-    image: (
-      <div tw="flex">
-        {choice && (
-          <div tw="flex">
-            {choice === "r" ? "🪨" : choice === "p" ? "📄" : "✂️"} vs{" "}
-            {cpuChoice === 0 ? "🪨" : cpuChoice === 1 ? "📄" : "✂️"}
-          </div>
-        )}
-        You: {state.pScore}
-        CPU: {state.cScore}
-      </div>
-    ),
+    image: Home,
     imageOptions: { aspectRatio: "1:1" },
     buttons: [
       <Button action="post" target="/">
