@@ -45,15 +45,22 @@ export const POST = frames(async (ctx) => {
       <Button action="post" target="/">
         HOME
       </Button>,
-      <Button action="post" target={{ query: { choice: "r" } }}>
+      <Button
+        action="post"
+        target={{ query: { choice: "r" }, pathname: "/rps" }}>
         🪨
       </Button>,
-      <Button action="post" target={{ query: { choice: "p" } }}>
+      <Button
+        action="post"
+        target={{ query: { choice: "p" }, pathname: "/rps" }}>
         📄
       </Button>,
-      <Button action="post" target={{ query: { choice: "s" } }}>
+      <Button
+        action="post"
+        target={{ query: { choice: "s" }, pathname: "/rps" }}>
         ✂️
       </Button>,
     ],
+    state,
   };
 });
