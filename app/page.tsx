@@ -20,6 +20,7 @@ export async function generateMetadata() {
       "fc:frame:button:1:post_url": `https://${process.env.NEXT_PUBLIC_SITE_URL}/frames/register`,
       "fc:frame:button:2": `PLAY ROCK, PAPER, SCISSORS`,
       "fc:frame:button:2:post_url": `https://${process.env.NEXT_PUBLIC_SITE_URL}/frames/rps`,
+      "fc:frame:input:text": `Email Address`,
       ...(await fetchMetadata(
         new URL("/frames", `https://${process.env.NEXT_PUBLIC_SITE_URL}`)
       )),
