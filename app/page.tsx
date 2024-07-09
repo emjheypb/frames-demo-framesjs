@@ -1,6 +1,38 @@
 import { fetchMetadata } from "frames.js/next";
 import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "New Format",
+  description:
+    "New format because the prev code doesn't work anymore for some reason",
+  openGraph: {
+    title: "New Format",
+    description:
+      "New format because the prev code doesn't work anymore for some reason",
+    images: [
+      `${
+        process.env.VERCEL_URL
+          ? `https://${process.env.VERCEL_URL}`
+          : "http://localhost:3000"
+      }/vercel.svg`,
+    ],
+  },
+  other: {
+    "fc:frame": "vNext",
+    "fc:frame:image": `${
+      process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}`
+        : "http://localhost:3000"
+    }/vercel.svg`,
+    "fc:frame:post_url": `${
+      process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}`
+        : "http://localhost:3000"
+    }/frames/route1`,
+    "fc:frame:button:1": `Start`,
+  },
+};
+
 export async function generateMetadata() {
   return {
     title: "New Format",
