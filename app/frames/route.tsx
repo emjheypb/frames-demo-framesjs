@@ -21,25 +21,19 @@ const frameHandler = frames(async (ctx) => {
 
   return {
     image: <div tw="flex">The count is {state.count}.</div>,
+    imageOptions: { aspectRatio: "1:1" },
     buttons: [
       <Button
         action="post"
-        target={{ query: { foo: "Hello" }, pathname: "/route1" }}
-      >
-        ROUTE 1
+        target={{ query: { foo: "Hello" }, pathname: "/register" }}>
+        REGISTER
       </Button>,
-      <Button action="post" target="/route2">
-        ROUTE 2
-      </Button>,
-      <Button action="post" target={{ query: { action: "increment" } }}>
-        +
-      </Button>,
-      <Button action="post" target={{ query: { action: "decrement" } }}>
-        -
+      <Button action="post" target="/rps">
+        PLAY ROCK, PAPER, SCISSORS
       </Button>,
     ],
     state,
-    textInput: "TEXT FOR ROUTE 2",
+    textInput: "Email Address",
   };
 });
 

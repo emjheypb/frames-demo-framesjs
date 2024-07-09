@@ -21,24 +21,14 @@ export async function generateMetadata() {
     // provide a full URL to your /frames endpoint
     other: {
       "fc:frame": "vNext",
-      "fc:frame:image": `${
-        process.env.NEXT_PUBLIC_SITE_URL
-          ? `https://${process.env.NEXT_PUBLIC_SITE_URL}`
-          : "http://localhost:3000"
-      }/human.png`,
-      "fc:frame:post_url": `${
-        process.env.NEXT_PUBLIC_SITE_URL
-          ? `https://${process.env.NEXT_PUBLIC_SITE_URL}`
-          : "http://localhost:3000"
-      }/frames`,
-      "fc:frame:button:1": `Start`,
+      "fc:frame:image": `https://${process.env.NEXT_PUBLIC_SITE_URL}/human.png`,
+      "fc:frame:image:aspect_ratio": "1:1",
+      "fc:frame:button:1": `REGISTER`,
+      "fc:frame:button:1:post_url": `https://${process.env.NEXT_PUBLIC_SITE_URL}/frames/register`,
+      "fc:frame:button:2": `PLAY ROCK, PAPER, SCISSORS`,
+      "fc:frame:button:2:post_url": `https://${process.env.NEXT_PUBLIC_SITE_URL}/frames/rps`,
       ...(await fetchMetadata(
-        new URL(
-          "/frames",
-          process.env.VERCEL_URL
-            ? `https://${process.env.NEXT_PUBLIC_SITE_URL}`
-            : "http://localhost:3000"
-        )
+        new URL("/frames", `https://${process.env.NEXT_PUBLIC_SITE_URL}`)
       )),
     },
   };

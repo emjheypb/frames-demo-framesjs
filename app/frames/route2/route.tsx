@@ -17,6 +17,7 @@ export const POST = frames(async (cntxt) => {
         The count is {state.count}. The word is: {message || "NOTHING"}
       </div>
     ),
+    imageOptions: { aspectRatio: "1:1" },
     buttons: [
       <Button action="post" target="/route1">
         ROUTE 1

@@ -20,9 +20,6 @@ export const POST = frames(async (ctx) => {
     ),
     imageOptions: { aspectRatio: "1:1" },
     buttons: [
-      <Button action="post" target="/route2">
-        ROUTE 2
-      </Button>,
       <Button action="post" target="/">
         HOME
       </Button>,
