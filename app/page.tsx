@@ -12,8 +12,8 @@ export async function generateMetadata() {
         "New format because the prev code doesn't work anymore for some reason",
       images: [
         `${
-          process.env.VERCEL_URL
-            ? `https://${process.env.VERCEL_URL}`
+          process.env.NEXT_PUBLIC_SITE_URL
+            ? `https://${process.env.NEXT_PUBLIC_SITE_URL}`
             : "http://localhost:3000"
         }/vercel.svg`,
       ],
@@ -22,13 +22,13 @@ export async function generateMetadata() {
     other: {
       "fc:frame": "vNext",
       "fc:frame:image": `${
-        process.env.VERCEL_URL
-          ? `https://${process.env.VERCEL_URL}`
+        process.env.NEXT_PUBLIC_SITE_URL
+          ? `https://${process.env.NEXT_PUBLIC_SITE_URL}`
           : "http://localhost:3000"
       }/vercel.svg`,
       "fc:frame:post_url": `${
-        process.env.VERCEL_URL
-          ? `https://${process.env.VERCEL_URL}`
+        process.env.NEXT_PUBLIC_SITE_URL
+          ? `https://${process.env.NEXT_PUBLIC_SITE_URL}`
           : "http://localhost:3000"
       }/frames`,
       "fc:frame:button:1": `Start`,
