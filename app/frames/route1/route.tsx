@@ -17,7 +17,8 @@ export const POST = frames(async (ctx) => {
         {ctx.message?.requesterUserData?.username} - {ctx.message?.requesterFid}{" "}
         - {ctx.message?.connectedAddress}
       </div>
-    ), // foo: bar
+    ),
+    imageOptions: { aspectRatio: "1:1" },
     buttons: [
       <Button action="post" target="/route2">
         ROUTE 2

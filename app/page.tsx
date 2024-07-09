@@ -1,5 +1,4 @@
 import { fetchMetadata } from "frames.js/next";
-import { Metadata } from "next";
 
 export async function generateMetadata() {
   return {
@@ -10,28 +9,21 @@ export async function generateMetadata() {
       title: "New Format",
       description:
         "New format because the prev code doesn't work anymore for some reason",
-      images: [
-        `${
-          process.env.VERCEL_URL
-            ? `https://${process.env.VERCEL_URL}`
-            : "http://localhost:3000"
-        }/vercel.svg`,
-      ],
+      images: [`https://${process.env.NEXT_PUBLIC_SITE_URL}/human.png`],
     },
     // provide a full URL to your /frames endpoint
     other: {
       "fc:frame": "vNext",
-      "fc:frame:image": `${
-        process.env.VERCEL_URL
-          ? `https://${process.env.VERCEL_URL}`
-          : "http://localhost:3000"
-      }/vercel.svg`,
-      "fc:frame:post_url": `${
-        process.env.VERCEL_URL
-          ? `https://${process.env.VERCEL_URL}`
-          : "http://localhost:3000"
-      }/frames`,
-      "fc:frame:button:1": `Start`,
+      "fc:frame:image": `https://${process.env.NEXT_PUBLIC_SITE_URL}/human.png`,
+      "fc:frame:image:aspect_ratio": "1:1",
+      "fc:frame:button:2": `REGISTER`,
+      "fc:frame:button:2:post_url": `https://${process.env.NEXT_PUBLIC_SITE_URL}/frames/register`,
+      "fc:frame:button:1": `PLAY ROCK, PAPER, SCISSORS`,
+      "fc:frame:button:1:post_url": `https://${process.env.NEXT_PUBLIC_SITE_URL}/frames/rps`,
+      "fc:frame:input:text": `Email Address`,
+      ...(await fetchMetadata(
+        new URL("/frames", `https://${process.env.NEXT_PUBLIC_SITE_URL}`)
+      )),
     },
   };
 }
