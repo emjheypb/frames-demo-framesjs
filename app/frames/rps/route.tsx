@@ -29,9 +29,9 @@ export const POST = frames(async (ctx) => {
 
   return {
     image: (
-      <div className="flex gap-2">
+      <div tw="flex gap-2">
         {choice && (
-          <div className="flex">
+          <div tw="flex">
             {choice === "r" ? "🪨" : choice === "p" ? "📄" : "✂️"} vs{" "}
             {cpuChoice === 0 ? "🪨" : cpuChoice === 1 ? "📄" : "✂️"}
           </div>
