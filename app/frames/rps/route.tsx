@@ -37,10 +37,11 @@ export const POST = frames(async (ctx) => {
 
   return {
     image: (
-      <div className="flex">
+      <div tw="flex">
         {choice && (
           <p>
-            {choice} vs {cpuChoice === 0 ? "🪨" : cpuChoice === 1 ? "📄" : "✂️"}
+            {choice === "r" ? "🪨" : choice === "p" ? "📄" : "✂️"} vs{" "}
+            {cpuChoice === 0 ? "🪨" : cpuChoice === 1 ? "📄" : "✂️"}
           </p>
         )}
         <p>You: {state.pScore}</p>
