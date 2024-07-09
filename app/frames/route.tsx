@@ -23,17 +23,17 @@ const frameHandler = frames(async (ctx) => {
     image: <div tw="flex">The count is {state.count}.</div>,
     imageOptions: { aspectRatio: "1:1" },
     buttons: [
-      <Button action="post" target="/register">
-        REGISTER
-      </Button>,
       <Button action="post" target="/rps">
-        PLAY RPC
+        PLAY RPS
       </Button>,
       <Button action="post" target={{ query: { action: "increment" } }}>
         +
       </Button>,
       <Button action="post" target={{ query: { action: "decrement" } }}>
         -
+      </Button>,
+      <Button action="post" target="/register">
+        REGISTER
       </Button>,
     ],
     state,
