@@ -31,6 +31,12 @@ const frameHandler = frames(async (ctx) => {
       <Button action="post" target="/rps">
         PLAY ROCK, PAPER, SCISSORS
       </Button>,
+      <Button action="post" target={{ query: { action: "increment" } }}>
+        +
+      </Button>,
+      <Button action="post" target={{ query: { action: "decrement" } }}>
+        -
+      </Button>,
     ],
     state,
     textInput: "Email Address",
