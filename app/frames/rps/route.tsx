@@ -12,32 +12,24 @@ export const POST = frames(async (ctx) => {
   const choice = ctx.searchParams.choice;
   const cpuChoice = Math.floor(Math.random() * 3);
 
-  const win = () => {
-    state = { ...state, pScore: state.pScore + 1 };
-  };
-
-  const lose = () => {
-    state = { ...state, cScore: state.cScore + 1 };
-  };
-
   switch (choice) {
     case "r":
-      if (cpuChoice === 1) lose;
-      else if (cpuChoice === 2) win;
+      if (cpuChoice === 1) state = { ...state, cScore: state.cScore + 1 };
+      else if (cpuChoice === 2) state = { ...state, pScore: state.pScore + 1 };
       break;
     case "p":
-      if (cpuChoice === 2) lose;
-      else if (cpuChoice === 0) win;
+      if (cpuChoice === 2) state = { ...state, cScore: state.cScore + 1 };
+      else if (cpuChoice === 0) state = { ...state, pScore: state.pScore + 1 };
       break;
     case "s":
-      if (cpuChoice === 0) lose;
-      else if (cpuChoice === 1) win;
+      if (cpuChoice === 0) state = { ...state, cScore: state.cScore + 1 };
+      else if (cpuChoice === 1) state = { ...state, pScore: state.pScore + 1 };
       break;
   }
 
   return {
     image: (
-      <div tw="flex flex-col">
+      <div tw="flex flex-col w-full h-full justify-center items-center">
         {choice && (
           <div>
             {choice === "r" ? "🪨" : choice === "p" ? "📄" : "✂️"} vs{" "}
