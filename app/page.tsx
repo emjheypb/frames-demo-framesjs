@@ -1,5 +1,4 @@
 import { fetchMetadata } from "frames.js/next";
-import { Metadata } from "next";
 
 export async function generateMetadata() {
   return {
@@ -10,13 +9,7 @@ export async function generateMetadata() {
       title: "New Format",
       description:
         "New format because the prev code doesn't work anymore for some reason",
-      images: [
-        `${
-          process.env.NEXT_PUBLIC_SITE_URL
-            ? `https://${process.env.NEXT_PUBLIC_SITE_URL}`
-            : "http://localhost:3000"
-        }/human.png`,
-      ],
+      images: [`https://${process.env.NEXT_PUBLIC_SITE_URL}/human.png`],
     },
     // provide a full URL to your /frames endpoint
     other: {

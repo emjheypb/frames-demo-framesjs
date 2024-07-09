@@ -26,11 +26,11 @@ const frameHandler = frames(async (ctx) => {
       <Button action="post" target="/rps">
         PLAY RPS
       </Button>,
-      <Button action="post" target={{ query: { action: "increment" } }}>
-        +
-      </Button>,
       <Button action="post" target={{ query: { action: "decrement" } }}>
         -
+      </Button>,
+      <Button action="post" target={{ query: { action: "increment" } }}>
+        +
       </Button>,
       <Button action="post" target="/register">
         REGISTER
