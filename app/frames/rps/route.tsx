@@ -30,16 +30,16 @@ export const POST = frames(async (ctx) => {
   return {
     image: (
       <div tw="flex">
-        {choice && (
-          <p>
+        {choice ? (
+          <div tw="flex">
             {choice === "r" ? "🪨" : choice === "p" ? "📄" : "✂️"} vs{" "}
             {cpuChoice === 0 ? "🪨" : cpuChoice === 1 ? "📄" : "✂️"}
-          </p>
+          </div>
+        ) : (
+          <div>{JSON.stringify(state)}</div>
         )}
-        <br />
-        <p>You: {state.pScore}</p>
-        <br />
-        <p>CPU: {state.cScore}</p>
+        You: {state.pScore}
+        CPU: {state.cScore}
       </div>
     ),
     imageOptions: { aspectRatio: "1:1" },
