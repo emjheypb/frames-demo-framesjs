@@ -15,7 +15,7 @@ export async function generateMetadata() {
           process.env.NEXT_PUBLIC_SITE_URL
             ? `https://${process.env.NEXT_PUBLIC_SITE_URL}`
             : "http://localhost:3000"
-        }/vercel.svg`,
+        }/human.png`,
       ],
     },
     // provide a full URL to your /frames endpoint
@@ -25,13 +25,21 @@ export async function generateMetadata() {
         process.env.NEXT_PUBLIC_SITE_URL
           ? `https://${process.env.NEXT_PUBLIC_SITE_URL}`
           : "http://localhost:3000"
-      }/vercel.svg`,
+      }/human.png`,
       "fc:frame:post_url": `${
         process.env.NEXT_PUBLIC_SITE_URL
           ? `https://${process.env.NEXT_PUBLIC_SITE_URL}`
           : "http://localhost:3000"
       }/frames`,
       "fc:frame:button:1": `Start`,
+      ...(await fetchMetadata(
+        new URL(
+          "/frames",
+          process.env.VERCEL_URL
+            ? `https://${process.env.NEXT_PUBLIC_SITE_URL}`
+            : "http://localhost:3000"
+        )
+      )),
     },
   };
 }
