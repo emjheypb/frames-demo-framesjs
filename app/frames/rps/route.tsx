@@ -30,13 +30,11 @@ export const POST = frames(async (ctx) => {
   return {
     image: (
       <div tw="flex">
-        {choice ? (
+        {choice && (
           <div tw="flex">
             {choice === "r" ? "🪨" : choice === "p" ? "📄" : "✂️"} vs{" "}
             {cpuChoice === 0 ? "🪨" : cpuChoice === 1 ? "📄" : "✂️"}
           </div>
-        ) : (
-          <div>{JSON.stringify(state)}</div>
         )}
         You: {state.pScore}
         CPU: {state.cScore}
@@ -47,19 +45,13 @@ export const POST = frames(async (ctx) => {
       <Button action="post" target="/">
         HOME
       </Button>,
-      <Button
-        action="post"
-        target={{ query: { choice: "r" }, pathname: "/rps" }}>
+      <Button action="post" target={{ query: { choice: "r" } }}>
         🪨
       </Button>,
-      <Button
-        action="post"
-        target={{ query: { choice: "p" }, pathname: "/rps" }}>
+      <Button action="post" target={{ query: { choice: "p" } }}>
         📄
       </Button>,
-      <Button
-        action="post"
-        target={{ query: { choice: "s" }, pathname: "/rps" }}>
+      <Button action="post" target={{ query: { choice: "s" } }}>
         ✂️
       </Button>,
     ],
