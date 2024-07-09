@@ -44,8 +44,7 @@ export const POST = frames(async (ctx) => {
             {cpuChoice === 0 ? "🪨" : cpuChoice === 1 ? "📄" : "✂️"}
           </div>
         )}
-        <div>You: {state.pScore}</div>
-        <div>CPU: {state.cScore}</div>
+        SCORE: {state.pScore} - {state.cScore}
       </div>
     ),
     imageOptions: { aspectRatio: "1:1" },
