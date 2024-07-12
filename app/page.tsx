@@ -14,7 +14,7 @@ export async function generateMetadata() {
     // provide a full URL to your /frames endpoint
     other: {
       "fc:frame": "vNext",
-      "fc:frame:image": `https://${process.env.NEXT_PUBLIC_SITE_URL}/human.png`,
+      "fc:frame:image": `https://${process.env.NEXT_PUBLIC_SITE_URL}/game/index.html`,
       "fc:frame:image:aspect_ratio": "1:1",
       "fc:frame:button:2": `REGISTER`,
       "fc:frame:button:2:post_url": `https://${process.env.NEXT_PUBLIC_SITE_URL}/frames/register`,
